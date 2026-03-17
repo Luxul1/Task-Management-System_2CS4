@@ -29,28 +29,36 @@ switch ($method) {
         if ($success) {
             echo json_encode(["message" => "Task created"]);
         } else {
-            echo json_encode(["message" => "Task creation failed"]);
+            echo json_encode(["message" => "Task creation failed."]);
         }
 
         break;
 
-    case "PUT":
-        parse_str($_SERVER['QUERY_STRING'], $query);
-        $input = json_decode(file_get_contents("php://input"), true);
+        case "PUT":
 
-        $success = $task->UpdateTask(
-            $query['task_id'] ?? null,
-            $input['task_name'] ?? null,
-            $input['status'] ?? null,
-            $input['user_id'] ?? null,
-            $input['due_date'] ?? null
-        );
+            parse_str($_SERVER['QUERY_STRING'], $query);
+            $input = json_decode(file_get_contents("php://input"), true);
 
-        if ($success){
-            echo json_encode(["message" => "Task updated"]);
-        } else {
-            echo json_encode(["message" => "Update failed or ID not found"]);
-        }
+            $task_id = $query['task_id'] ?? null;
+
+            if(!$task_id){
+                echo json_encode(["message" => "task_id is required"]);
+                exit;
+            }
+
+                $success = $task->UpdateTask(
+                    $input['task_id'] ?? null,
+                    $input['task_name'] ?? null,
+                    $input['status'] ?? null,
+                    $input['user_id'] ?? null
+                );
+
+            
+            if($success)
+                echo json_encode(["message" =>  "Update successful"]);
+            else
+                echo json_encode(["message" =>  "Update failed."]);
+
         break;
 
     case "DELETE":
