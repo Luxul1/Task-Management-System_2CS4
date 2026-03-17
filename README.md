@@ -22,7 +22,15 @@ Utilizes a task class that extends a base model for object oriented database int
 - (DELETE): removes a record from the database and returns a success or failure message based on the rowCount.<li>
 
 Author: Cortez
+...
+CHANGES 
 
+Model API Development
+- each part of the crud is integrated into a class, where it can be access by calling the object/function. 
+- It can be seen throughout the system, where it also accomodates the four pillars of OOP, namely Encapsulation, Polymorphism, Inheritance, Abstraction.
+
+Relationship API Development
+- In here, it uses the JOIN syntax to allow the user to connect between different database tables. 
 
 Task Management System
 
@@ -42,8 +50,18 @@ TESTING
 
 The Task Management System has the following functions:
     - Tasks
-        > 
+        > RetrieveTask
+        > CreateTask
+        > UpdateTask
+        > DeleteTask
     - Projects
+        > getProjects
+        > createProject
+        > updateProject
+        > deleteProject
     - Analytics
+        > getTasksPerProject
+        > getTaskStatus
+        
 
 
