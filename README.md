@@ -1,9 +1,25 @@
 # Task-Management-System
+This project is a RESTful API built using PHP and PostgreSQL that manages a task management system with Users, Projects, and Tasks modules. It follows a modular structure where each module supports full CRUD (Create, Read, Update, Delete) operations and is extended with analytics endpoints for reporting and data aggregation.
+
+The system is designed to handle relationships between entities such as user_id, project_id, and task_id, allowing tasks to be assigned to users and grouped under specific projects. It also includes analytics features that provide insights such as tasks per project, task status filtering, and assigned tasks per user.
+
+All endpoints return responses in JSON format and are tested using Postman. The API uses query-based routing for analytics endpoints and standard REST-style endpoints for CRUD operations.
+
+This project demonstrates core backend development concepts including:
+
+- REST API design
+- CRUD operations
+- Database integration (PostgreSQL)
+- JOIN queries and data aggregation
+- PHP architecture
+- JSON response handling
+
+
 DOCUMENTATION AND TESTING
 
 Database Designer
 
-This is the foundation of the system, a relational database designed for referential integrity. The “users” and “projects” tables act as master data sources, while the “tasks” tables serve as the central operational hub, linking work items to specific individuals and project categories using FOREIGN KEY constraints.<
+This is the foundation of the system, a relational database designed for referential integrity. The “users” and “projects” tables act as master data sources, while the “tasks” tables serve as the central operational hub, linking work items to specific individuals and project categories using FOREIGN KEY constraints.
 
 Author: Jojo
 
@@ -35,7 +51,7 @@ Relationship API Development
 Task Management System
 
 ## Description 
-This system developed using RESTful API to efficiently manage and track  tasks assigned to users. The backend handles data logic via PHP OOP, while providing a relational database for frontend.
+This system developed using REST API to efficiently manage and track  tasks assigned to users. The backend handles data logic via PHP OOP, while providing a relational database for frontend.
 
 ## Roles
 
